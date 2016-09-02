@@ -79,6 +79,10 @@
 		4539C9390EC280E200A70F4C /* gtest-param-util-generated.h in Copy Headers Internal */ = {isa = PBXBuildFile; fileRef = 4539C9360EC280E200A70F4C /* gtest-param-util-generated.h */; };
 		4539C93A0EC280E200A70F4C /* gtest-param-util.h in Copy Headers Internal */ = {isa = PBXBuildFile; fileRef = 4539C9370EC280E200A70F4C /* gtest-param-util.h */; };
 		4567C8181264FF71007740BE /* gtest-printers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4567C8171264FF71007740BE /* gtest-printers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB9EE3431D78F2DA00EF6B52 /* gtest-port.h in Headers */ = {isa = PBXBuildFile; fileRef = 404883E50E2F799B00CF7658 /* gtest-port.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB9EE3461D78F30F00EF6B52 /* gtest-port-arch.h in Headers */ = {isa = PBXBuildFile; fileRef = AB9EE3441D78F30F00EF6B52 /* gtest-port-arch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB9EE3491D78F5E500EF6B52 /* libgtest.a in Resources */ = {isa = PBXBuildFile; fileRef = 40C848FA101A209C0083642A /* libgtest.a */; };
+		AB9EE35C1D79586F00EF6B52 /* sample1.h in Headers */ = {isa = PBXBuildFile; fileRef = 4089A02D0FFACF7F000B29AE /* sample1.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +248,8 @@
 		4539C9360EC280E200A70F4C /* gtest-param-util-generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "gtest-param-util-generated.h"; sourceTree = "<group>"; };
 		4539C9370EC280E200A70F4C /* gtest-param-util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "gtest-param-util.h"; sourceTree = "<group>"; };
 		4567C8171264FF71007740BE /* gtest-printers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "gtest-printers.h"; sourceTree = "<group>"; };
+		AB9EE3441D78F30F00EF6B52 /* gtest-port-arch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "gtest-port-arch.h"; sourceTree = "<group>"; };
+		AB9EE3521D79065F00EF6B52 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib/libstdc++.6.tbd"; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +309,7 @@
 		0867D691FE84028FC02AAC07 /* gtest */ = {
 			isa = PBXGroup;
 			children = (
+				AB9EE3521D79065F00EF6B52 /* libstdc++.6.tbd */,
 				40D4CDF00E30E07400294801 /* Config */,
 				08FB77ACFE841707C02AAC07 /* Source */,
 				40D4CF4E0E30F5E200294801 /* Resources */,
@@ -381,6 +388,7 @@
 				4539C9350EC280E200A70F4C /* gtest-linked_ptr.h */,
 				4539C9360EC280E200A70F4C /* gtest-param-util-generated.h */,
 				4539C9370EC280E200A70F4C /* gtest-param-util.h */,
+				AB9EE3441D78F30F00EF6B52 /* gtest-port-arch.h */,
 				404883E50E2F799B00CF7658 /* gtest-port.h */,
 				404883E60E2F799B00CF7658 /* gtest-string.h */,
 				40899F4D0FFA7271000B29AE /* gtest-tuple.h */,
@@ -450,6 +458,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB9EE3421D78F2BB00EF6B52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9EE3431D78F2DA00EF6B52 /* gtest-port.h in Headers */,
+				AB9EE3461D78F30F00EF6B52 /* gtest-port-arch.h in Headers */,
+				AB9EE35C1D79586F00EF6B52 /* sample1.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -475,6 +493,7 @@
 			buildConfigurationList = 4089A0240FFACF01000B29AE /* Build configuration list for PBXNativeTarget "sample1_unittest-framework" */;
 			buildPhases = (
 				4089A0100FFACEFC000B29AE /* Sources */,
+				AB9EE3421D78F2BB00EF6B52 /* Headers */,
 				4089A0110FFACEFC000B29AE /* Frameworks */,
 			);
 			buildRules = (
@@ -617,6 +636,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB9EE3491D78F5E500EF6B52 /* libgtest.a in Resources */,
 				404884500E2F799B00CF7658 /* README.md in Resources */,
 				404884AC0E2F7CD900CF7658 /* CHANGES in Resources */,
 				404884AD0E2F7CD900CF7658 /* CONTRIBUTORS in Resources */,
@@ -839,7 +859,26 @@
 		4089A0150FFACEFD000B29AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					../../include,
+					../../,
+					../include,
+					..,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DDEBUG=1",
+					"-DGTEST_USE_OWN_TR1_TUPLE=1",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DGTEST_USE_OWN_TR1_TUPLE=1",
+				);
 				PRODUCT_NAME = "sample1_unittest-framework";
 				SDKROOT = macosx;
 			};
@@ -848,7 +887,17 @@
 		4089A0160FFACEFD000B29AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					../../include,
+					../../,
+					../include,
+					..,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "sample1_unittest-framework";
 				SDKROOT = macosx;
 			};
@@ -882,6 +931,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40899FB30FFA7567000B29AE /* StaticLibraryTarget.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
@@ -890,6 +941,7 @@
 					../,
 					../include/,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = gtest;
 				SDKROOT = macosx;
 			};
@@ -899,6 +951,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40899FB30FFA7567000B29AE /* StaticLibraryTarget.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
@@ -907,6 +961,7 @@
 					../,
 					../include/,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = gtest;
 				SDKROOT = macosx;
 			};
@@ -916,12 +971,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40899FB30FFA7567000B29AE /* StaticLibraryTarget.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					../,
 					../include/,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = gtest_main;
 				SDKROOT = macosx;
 			};
@@ -931,12 +989,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40899FB30FFA7567000B29AE /* StaticLibraryTarget.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					../,
 					../include/,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = gtest_main;
 				SDKROOT = macosx;
 			};
@@ -984,6 +1045,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40D4CDF20E30E07400294801 /* FrameworkTarget.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -995,6 +1058,7 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "$(PROJECT_TEMP_DIR)/Version.h";
 				INFOPLIST_PREPROCESS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = gtest;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1005,6 +1069,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40D4CDF20E30E07400294801 /* FrameworkTarget.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1016,6 +1082,7 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "$(PROJECT_TEMP_DIR)/Version.h";
 				INFOPLIST_PREPROCESS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = gtest;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
